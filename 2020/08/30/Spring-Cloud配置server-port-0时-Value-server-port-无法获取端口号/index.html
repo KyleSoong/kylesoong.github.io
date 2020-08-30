@@ -5,17 +5,21 @@
   
 
   
-  <title>Kyle Soong&#39;s Blog</title>
+  <title>SpringCloud配置server.port=0时,@Value(&#34;${server.port}&#34;)无法获取端口号 | Kyle Soong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Javaѧϰ·�Ͻ�ӡ...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kyle Soong&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="使用SpringCloud时，如服务需要使用随机端口号，可增加配置： 1server.port&#x3D;0  此时，通过@Value(&quot;$&amp;#123;server.port&amp;#125;&quot;)无法正确获取端口号，可以使用以下方式获取： 1234567private final Environment environment;public constucter(Environmen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud配置server.port&#x3D;0时,@Value(&quot;${server.port}&quot;)无法获取端口号">
+<meta property="og:url" content="http://yoursite.com/2020/08/30/Spring-Cloud%E9%85%8D%E7%BD%AEserver-port-0%E6%97%B6-Value-server-port-%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96%E7%AB%AF%E5%8F%A3%E5%8F%B7/index.html">
 <meta property="og:site_name" content="Kyle Soong&#39;s Blog">
-<meta property="og:description" content="Javaѧϰ·�Ͻ�ӡ...">
+<meta property="og:description" content="使用SpringCloud时，如服务需要使用随机端口号，可增加配置： 1server.port&#x3D;0  此时，通过@Value(&quot;$&amp;#123;server.port&amp;#125;&quot;)无法正确获取端口号，可以使用以下方式获取： 1234567private final Environment environment;public constucter(Environmen">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-08-30T13:50:18.000Z">
+<meta property="article:modified_time" content="2020-08-30T14:15:32.102Z">
 <meta property="article:author" content="Kyle Soong">
-<meta property="article:tag" content="java kyle kylesoong">
+<meta property="article:tag" content="SpringCloud">
+<meta property="article:tag" content="端口号">
+<meta property="article:tag" content="server.port">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Kyle Soong&#39;s Blog" type="application/atom+xml">
@@ -65,9 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Spring-Cloud配置server-port-0时-Value-server-port-无法获取端口号" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Spring-Cloud配置server-port-0时-Value-server-port-无法获取端口号" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/30/Spring-Cloud%E9%85%8D%E7%BD%AEserver-port-0%E6%97%B6-Value-server-port-%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96%E7%AB%AF%E5%8F%A3%E5%8F%B7/" class="article-date">
   <time datetime="2020-08-30T13:50:18.000Z" itemprop="datePublished">2020-08-30</time>
@@ -84,8 +86,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/30/Spring-Cloud%E9%85%8D%E7%BD%AEserver-port-0%E6%97%B6-Value-server-port-%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96%E7%AB%AF%E5%8F%A3%E5%8F%B7/">SpringCloud配置server.port=0时,@Value(&#34;${server.port}&#34;)无法获取端口号</a>
+    <h1 class="article-title" itemprop="name">
+      SpringCloud配置server.port=0时,@Value(&#34;${server.port}&#34;)无法获取端口号
     </h1>
   
 
@@ -109,11 +111,9 @@
     </footer>
   </div>
   
-</article>
-
-
+    
   
-
+</article>
 
 </section>
         
