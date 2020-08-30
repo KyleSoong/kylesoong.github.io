@@ -67,9 +67,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-SpringCloud无法正确获取端口号" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-两种方式获取SpringCloud端口号" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/30/SpringCloud%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E8%8E%B7%E5%8F%96%E7%AB%AF%E5%8F%A3%E5%8F%B7/" class="article-date">
+    <a href="/2020/08/30/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E8%8E%B7%E5%8F%96SpringCloud%E7%AB%AF%E5%8F%A3%E5%8F%B7/" class="article-date">
   <time datetime="2020-08-30T13:50:18.000Z" itemprop="datePublished">2020-08-30</time>
 </a>
     
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/30/SpringCloud%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E8%8E%B7%E5%8F%96%E7%AB%AF%E5%8F%A3%E5%8F%B7/">SpringCloud配置server.port=0时,@Value(&#34;${server.port}&#34;)无法获取端口号</a>
+      <a class="article-title" href="/2020/08/30/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E8%8E%B7%E5%8F%96SpringCloud%E7%AB%AF%E5%8F%A3%E5%8F%B7/">两种方式获取SpringCloud端口号</a>
     </h1>
   
 
@@ -93,15 +93,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用SpringCloud时，如服务需要使用随机端口号，可增加配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.port&#x3D;0</span><br></pre></td></tr></table></figure>
+        <p>在SpringCloud服务中，如需获取端口，可通过注解方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Value(&quot;$&#123;server.port&#125;&quot;)</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> port;</span><br></pre></td></tr></table></figure>
 
-<p>此时，通过<code>@Value(&quot;$&#123;server.port&#125;&quot;)</code>无法正确获取端口号，可以使用以下方式获取：</p>
+<p>但如果配置了随机端口（<code>server.port=0</code>），则需改用以下方式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Environment environment;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">constucter</span><span class="params">(Environment environment)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.environment = environment;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">getPort</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> environment.getProperty(<span class="string">&quot;local.server.port&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/30/SpringCloud%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E8%8E%B7%E5%8F%96%E7%AB%AF%E5%8F%A3%E5%8F%B7/" data-id="ckeh6py1a00002gud16yn9qhn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/30/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E8%8E%B7%E5%8F%96SpringCloud%E7%AB%AF%E5%8F%A3%E5%8F%B7/" data-id="ckeh7ev0p0006w8ud2z3270g8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/" rel="tag">SpringCloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/server-port/" rel="tag">server.port</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AB%AF%E5%8F%A3%E5%8F%B7/" rel="tag">端口号</a></li></ul>
@@ -165,7 +165,7 @@
       <ul>
         
           <li>
-            <a href="/2020/08/30/SpringCloud%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E8%8E%B7%E5%8F%96%E7%AB%AF%E5%8F%A3%E5%8F%B7/">SpringCloud配置server.port=0时,@Value(&#34;${server.port}&#34;)无法获取端口号</a>
+            <a href="/2020/08/30/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E8%8E%B7%E5%8F%96SpringCloud%E7%AB%AF%E5%8F%A3%E5%8F%B7/">两种方式获取SpringCloud端口号</a>
           </li>
         
       </ul>
